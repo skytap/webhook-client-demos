@@ -1,0 +1,28 @@
+<form class="form-horizontal form-complex">
+    <div class="control-group">
+        <label class="control-label" for="skytap_hostname">Skytap Hostname</label>
+
+        <div class="controls">
+            <input type="text" name="action.skytap.param.base_url" id="skytap_hostname" />
+            <span class="help-block">
+              Skytap hostname. By default should be https://cloud.skytap.com
+            </span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="skytap_username">Skytap Username</label>
+
+        <div class="controls">
+            <input type="text" name="action.skytap.param.username" id="skytap_username" placeholder="Required" required/>
+            <span class="help-block">Please enter your Skytap login username.</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="skytap_api_token">Skytap API Token</label>
+
+        <div class="controls">
+            <input type="text" name="action.skytap.param.api_token" id="skytap_api_token" placeholder="Required" required/>
+            <span class="help-block">Override the globally configured HipChat Auth Token for this alert.</span>
+        </div>
+    </div>
+</form>
