@@ -57,7 +57,6 @@ function addToSuspendQueue(env_id, vm_id) {
 async function startWorker(){
   await worker.connect()
   worker.start()
-  // these are log messages. will take out after testing
   worker.on('start', () => { console.log('worker started') })
   worker.on('failure', (queue, job, failure) => { console.log(`job failure ${queue} ${JSON.stringify(job)} >> ${failure}`) })
   worker.on('error', (error, queue, job) => { console.log(`error ${queue} ${JSON.stringify(job)}  >> ${error}`) })
