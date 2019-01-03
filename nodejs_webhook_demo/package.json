@@ -1,0 +1,26 @@
+{
+  "name": "skytap-webhook-demo",
+  "version": "1.0.0",
+  "description": "This NodeJS package is a demo of Skytap webhook receiver. It listens to the auditing history from your Skytap account and automatically suspend any starting vms. ",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "node-resque": "^5.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skytap/webhook-client-demos.git"
+  },
+  "author": "Skytap.Inc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skytap/webhook-client-demos/issues"
+  },
+  "homepage": "https://github.com/skytap/webhook-client-demos#readme"
+}
