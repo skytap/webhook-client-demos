@@ -1,4 +1,3 @@
-import sys
 from flask import Flask, request
 from worker import StartWorker
 from lib.utility import Utility
