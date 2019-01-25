@@ -1,7 +1,14 @@
 import json
+from options import Options
 
 
 class Utility(object):
+    def __init__(self):
+        self.options = Options()
+
+    def send_data_to_splunk(self):
+        return self.options["splunk"]
+
     def running_vms_from_payload(self, raw_data):
         result = {}
         data = json.loads(raw_data)
