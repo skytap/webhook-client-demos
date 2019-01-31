@@ -7,5 +7,5 @@ SPLUNK_HOSTNAME = 'http://cloud.splunk.com'
 SPLUNK_PORT = 8088
 SPLUNK_EC_TOKEN = ''
 SPLUNK_EC_ENDPOINT = 'services/collector/event'
-SSL_VERIFY = False
+SSL_VERIFY = True
 DEBUG = False
