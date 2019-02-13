@@ -4,7 +4,7 @@ The Skytap webhook demo provides sample applications in both NodeJS and Python. 
 ## Before You Begin 
 Before you begin, please make sure to read through the requirement page,
 
-* NodeJS Webhook Demo:
+### NodeJS Webhook Demo:
 
 **Requirements:**
 * axios
@@ -41,7 +41,7 @@ Below are the settings you need to fill out if you would like to send the data t
 | SPLUNK_EC_ENDPOINT  | Splunk Event collector endpoint                     |
 
 
-* Python Webhook Demo: 
+### Python Webhook Demo: 
 
 **Requirements:**
 * Python 2.7.10+
