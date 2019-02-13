@@ -14,6 +14,7 @@ Before you begin, please make sure to read through the requirement page,
 * node-resque
 
 **Using the tool**
+
 Configure your Skytap and redis information in `.env`
 
 | Variable            | Purpose                                              |
@@ -50,6 +51,7 @@ Below are the settings you need to fill out if you would like to send the data t
 * rq
 
 **Setting Up Variables**
+
 Configure your Skytap information in `settings.py`
 
 | Variable            | Purpose                                              |
