@@ -18,6 +18,20 @@ import redis
 from apscheduler.schedulers.background import BackgroundScheduler
 from rq import Worker, Queue, Connection, get_failed_queue
 
+"""
+atexit: The module defines a single function to register cleanup functions. 
+        The python webhook demo application is using this module to gracefully 
+        terminate the scheduler function that run the retry_failed_queue 
+        method periodically.
+
+APScheduler: A Python library that lets you schedule your python code to be 
+            executed later, either just once or periodically. The python webhook 
+            demo is using this library to run the retry_failed_queue every 30 seconds. 
+
+rq: This is a simple Python library for queueing jobs and processing them
+    in the brackground with workers.
+"""
+
 
 class StartWorker(object):
     """This class handles the task queues and worker"""
@@ -32,6 +46,7 @@ class StartWorker(object):
         return None
 
     def start_scheduler(self):
+        """This method retried the taks in failed queue every 30 seconds"""
         self.scheduler.add_job(func=self.retry_failed_queue,
                                trigger="interval", seconds=30)
         self.scheduler.start()
@@ -73,9 +88,6 @@ class StartWorker(object):
         self.start_worker()
         self.start_scheduler()
         return None
-
-
-atexit.register(lambda: scheduler.shutdown())
 
 if __name__ == '__main__':
     sw = StartWorker()

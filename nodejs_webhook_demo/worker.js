@@ -11,6 +11,12 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+/**
+  NodeResque: This package distributed delayed jobs in nodejs. 
+              Resque is a background job system backed by Redis 
+              (version 2.0.0 and up required). 
+*/
 const NodeResque = require('node-resque');
 let utility = require('./util/utility');
 let skytap = require('./util/api');

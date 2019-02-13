@@ -5,17 +5,23 @@ The Skytap webhook demo provides sample applications in both NodeJS and Python. 
 Before you begin, please make sure you have:
 
 ##### NodeJS Webhook Demo:
-* axios
-* dotenv
-* express
-* minimist
-* node-resque
+* Node v8.0.0+
+* [Redis](https://redis.io/topics/quickstart)
+* Node modules:
+    * axios
+    * dotenv
+    * express
+    * minimist
+    * node-resque
+    * body-parser
 
 ##### Python Webhook Demo: 
 * Python 2.7.10+
-* flask
-* apscheduler
-* rq
+* [Redis](https://redis.io/topics/quickstart)
+* Python libraries:
+    * apscheduler
+    * rq
+    * redis
 
 ## Installing and Running the Skytap Webhook Demo
 Clone the webhook demo repo based on your langugae preference and install all the required libraries and packages.

@@ -11,6 +11,13 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+/**
+  dotenv: This is a zero-dependency module that loads environment variables
+		  from a .env file into process.env.
+  body-parser: This module helps parse incoming request bodies 
+		  	   in a middleware before your handlers.
+*/
 require('dotenv').config();
 const express = require('express');
 const app = express();

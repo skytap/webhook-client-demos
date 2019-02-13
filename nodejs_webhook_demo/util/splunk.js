@@ -11,28 +11,32 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+/**
+  axios: A module provides Promise based HTTP client for the browser and node.js
+*/
 const axios = require('axios');
 
 /**
-This constructs the authentication header, required for Splunk API interaction.
+  This constructs the authentication header, required for Splunk API interaction.
 */
 const HEADERS = {
   'Authorization': `Splunk ${process.env.SPLUNK_EC_TOKEN}`
 };
 
 /**
-This constructs the Splunk Event Collector endpoint.
+  This constructs the Splunk Event Collector endpoint.
 */
 function build_url() {
   return `${process.env.SPLUNK_HOSTNAME}:${process.env.SPLUNK_PORT}/${process.env.SPLUNK_EC_TOKEN}`
 };
 
 /**
-This method post the event from Skytap to Splunk      
-  Args:
+  This method post the event from Skytap to Splunk      
+    Args:
       data (JSON): Event from Skytap. 
 
-  Return: 
+    Return: 
       done() if successful, log error on failure.
 */
 function add(data){

@@ -13,10 +13,10 @@
 // limitations under the License.
 
 /**
-This method filters audit events from Skytap webook.       
-  Args:
+  This method filters audit events from Skytap webook.       
+    Args:
       raw_data (JSON): webhook event from Skytap.
-  Returns:
+    Returns:
       A dictionary contains of environment id and vm ids 
       for the newly launched vms. 
 */
@@ -28,10 +28,10 @@ function running_vms_from_payload(data) {
 }
 
 /**
-This method proccess 'Run Environment' audit event from Skytap Webhook
-  Args:
+  This method proccess 'Run Environment' audit event from Skytap Webhook
+    Args:
       payload (JSON): 'Run Environment' audit event from Skytap webhook.
-  Returns:
+    Returns:
       A dictionary of environment id and vm ids for the newly launched vms. 
 */
 function process_payload(op_array) {
