@@ -11,6 +11,15 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+/**
+This method filters audit events from Skytap webook.       
+  Args:
+      raw_data (JSON): webhook event from Skytap.
+  Returns:
+      A dictionary contains of environment id and vm ids 
+      for the newly launched vms. 
+*/
 function running_vms_from_payload(data) {
   if (data['type'] == 'Run Environment') {
       var op_array = data['operated_on'];
@@ -18,6 +27,13 @@ function running_vms_from_payload(data) {
   }
 }
 
+/**
+This method proccess 'Run Environment' audit event from Skytap Webhook
+  Args:
+      payload (JSON): 'Run Environment' audit event from Skytap webhook.
+  Returns:
+      A dictionary of environment id and vm ids for the newly launched vms. 
+*/
 function process_payload(op_array) {
   var vm_ids = [];
   for (i = 0; i < op_array.length; i++) {

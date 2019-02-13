@@ -13,6 +13,11 @@
 // limitations under the License.
 const minimist = require('minimist');
 
+/**
+This handles command line arguments. 
+	Args: 
+		splunk: False by default. Send Skytap events (JSON) format to Splunk if True.
+*/ 
 let args = minimist(process.argv.slice(2), {
   default: {
     splunk: false

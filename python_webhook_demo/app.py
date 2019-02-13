@@ -29,12 +29,12 @@ worker = StartWorker()
 
 @app.route('/', methods=['POST'])
 def webhook():
-    # Sending all Skytap webhook data to Splunk
+    # If True then sending all Skytap webhook data to Splunk.
     if utility.send_data_to_splunk():
         splunk.add(request.data)
     vm_infos = utility.running_vms_from_payload(request.data)
 
-    # Sending all the suspension vm task to a queue
+    # Sending the suspension vm task to the queue
     for env_id, vm_ids in vm_infos.items():
         for vm_id in vm_ids:
             worker.enqueue(skytap.suspend_vm, (env_id, vm_id,))

@@ -35,7 +35,7 @@ class Utility(object):
         Args:
             raw_data (JSON): webhook event from Skytap.
         Returns:
-            A dictionary contains dictionaries of environment id and vm id 
+            A dictionary contains dictionaries of environment id and vm ids 
             for all newly launched vms. 
         """
         result = {}
@@ -51,7 +51,7 @@ class Utility(object):
         Args:
             payload (JSON): 'Run Environment' audit event from Skytap webhook.
         Returns:
-            A dictionary of environment id and vm id for a newly launched vms. 
+            A dictionary of environment id and vm ids for the newly launched vms. 
         """
         vm_ids = []
         for op in payload['operated_on']:

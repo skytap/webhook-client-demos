@@ -14,11 +14,17 @@
 const axios = require('axios');
 const https = require('https');
 
+/**
+This method construct the authentication, required for all API interaction.
+*/
 const AUTH = {
   username: process.env.SKYTAP_USERNAME,
   password: process.env.SKYTAP_API_TOKEN
 };
 
+/**
+This constructs the header, required for all API interaction.
+*/
 const HEADERS = {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
@@ -30,11 +36,26 @@ const PARAMS = {
 
 const RUNNING_STATE = 'running';
 
+/**
+This constructs the vm endpoint.
+  Args: 
+    env_id (str): Environment id. It is also referred as the configuration id. 
+    vm_id (str): VM id. 
+*/
 function build_url(env_id, vm_id) {
   var endpoint = `/configurations/${env_id}/vms/${vm_id}`;
   return process.env.SKYTAP_HOSTNAME.concat(endpoint);
 }
 
+/**
+This method return the state of the specified vm.
+  Args: 
+      env_id (str): Environment id. It is also referred as the configuration id. 
+      vm_id (str): VM id. 
+
+  Returns: 
+      The state of the vm if successful, log error on failure
+*/
 function vm_runstate(env_id, vm_id) {
   var result = axios.get(build_url(env_id, vm_id),
     {headers: HEADERS},
@@ -47,10 +68,28 @@ function vm_runstate(env_id, vm_id) {
   });
 };
 
+/**
+This method checks if the vm is in running state      
+  Args: 
+      env_id (str): Environment id. It is also referred as the configuration id. 
+      vm_id (str): VM id. 
+
+  Returns: 
+      True if the vm is running, False otherwise.
+*/
 function is_vm_running(env_id, vm_id){
   return vm_runstate(env_id, vm_id) === RUNNING_STATE
 };
 
+/**
+This method suspends vm
+  Args: 
+      env_id (str): Environment id. It is also referred as the configuration id. 
+      vm_id (str): VM id. 
+
+  Returns: 
+      done() if successful, log error on failure.
+*/
 function suspend_vms(env_id, vm_id) {
   axios.put(
     build_url(env_id, vm_id),

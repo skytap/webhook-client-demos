@@ -13,15 +13,28 @@
 // limitations under the License.
 const axios = require('axios');
 
-
+/**
+This constructs the authentication header, required for Splunk API interaction.
+*/
 const HEADERS = {
   'Authorization': `Splunk ${process.env.SPLUNK_EC_TOKEN}`
 };
 
+/**
+This constructs the Splunk Event Collector endpoint.
+*/
 function build_url() {
   return `${process.env.SPLUNK_HOSTNAME}:${process.env.SPLUNK_PORT}/${process.env.SPLUNK_EC_TOKEN}`
 };
 
+/**
+This method post the event from Skytap to Splunk      
+  Args:
+      data (JSON): Event from Skytap. 
+
+  Return: 
+      done() if successful, log error on failure.
+*/
 function add(data){
   var event = {"event": data}
   var result = axios.post(build_url(),
