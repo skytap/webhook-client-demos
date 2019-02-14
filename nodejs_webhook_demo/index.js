@@ -28,13 +28,14 @@ var worker = require('./worker');
 
 app.use(bodyParser.json());
 
+// constantly performing post request to skytap to retrieve auditing data 
 app.post('/', function(req, res) {
   // if True then sending all Skytap webhook data to Splunk. 
   if (options.args['splunk'] === true){
     splunk.add(req.body.payload);
   }
 
-  //# Sending the suspension vm task to the queue
+  // Sending the suspension vm task to the queue
   worker.enqueue('processVM', 'process_running_vms', req.body.payload);
   res.status(200).send('OK');
 });

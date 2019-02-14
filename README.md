@@ -53,8 +53,11 @@ Clone the webhook demo repo based on your langugae preference and install all th
     | SPLUNK_EC_ENDPOINT  | Splunk Event collector endpoint                     |
 
 2. Navigate to the directory containing the app.py file and enter the following at the command line:
+
     ```node index.js```
+    
 3. If you would like to send webhook data to Splunk, you should start the application with:
+
     ```node index.js --splunk```
 
 #### Python Webhook Demo:
@@ -89,4 +92,4 @@ Clone the webhook demo repo based on your langugae preference and install all th
     ```python app.py --splunk```
 
 ## License
-MIT; see [LICENSE](LICENSE) for details.
+Apache; see [LICENSE](LICENSE) for details.
