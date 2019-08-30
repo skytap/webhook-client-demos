@@ -1,5 +1,5 @@
 # Skytap Webhook Demo 
-The Skytap webhook demo provides sample applications in both NodeJS and Python that show how to retrieve data from a Skytap webhook. The demo suspends any newly launched virtual machines in your Skytap account, based on the event it receives from the Skytap webhook, and it provides an example to send the Skytap event to a security information and event management (SIEM) tool, such as Splunk.
+The Skytap webhook demo provides NodeJS and Python sample applications that show how to retrieve data from a Skytap webhook. The demo suspends any newly launched virtual machines in your Skytap account, based on the event it receives from the Skytap webhook, and it provides an example to send the Skytap event to a security information and event management (SIEM) tool, such as Splunk.
 
 ## Before You Begin 
 Before you begin, please make sure you have the following:
@@ -29,7 +29,7 @@ Clone the webhook demo repo and install the required libraries and packages.
 #### NodeJS Webhook Demo:
 1. Configure your Skytap and redis information in `.env`
 
-    | Variable            | Purpose                                                                                     |
+    | Variable Name       | Description                                                                                 |
     |---------------------|---------------------------------------------------------------------------------------------|
     | SKYTAP_USERNAME     | Your Skytap user name.                                                                      |
     | SKYTAP_API_TOKEN    | Your Skytap API token.                                                                      |
@@ -45,7 +45,7 @@ Clone the webhook demo repo and install the required libraries and packages.
 
     If you want to send webhook data to Splunk, configure these additional settings:
 
-    | Variable            | Purpose                                                                                     |
+    | Variable Name       | Description                                                                                 |
     |---------------------|---------------------------------------------------------------------------------------------|
     | SPLUNK_HOSTNAME     | Your Splunk hostname. It is set to Splunk cloud by default.                                 |
     | SPLUNK_PORT         | `8088` by default. Please specify the port if it's different from the default setting.      |
@@ -64,7 +64,7 @@ Clone the webhook demo repo and install the required libraries and packages.
 
 1. Configure your Skytap information in `settings.py`
 
-    | Variable            | Purpose                                                                                     |
+    | Variable Name       | Description                                                                                 |
     |---------------------|---------------------------------------------------------------------------------------------|
     | SKYTAP_USERNAME     | Your Skytap user name.                                                                      |
     | SKYTAP_API_TOKEN    | Your Skytap API token.                                                                      |
@@ -76,7 +76,7 @@ Clone the webhook demo repo and install the required libraries and packages.
 
     If you want to send webhook data to Splunk, configure these additional settings:
 
-    | Variable            | Purpose                                                                                     |
+    | Variable Name       | Description                                                                                 |
     |---------------------|---------------------------------------------------------------------------------------------|
     | SPLUNK_HOSTNAME     | Your Splunk hostname. It is set to Splunk cloud by default.                                 |
     | SPLUNK_PORT         | `8088` by default. Please specify the port if the default setting is different from yours.  |
